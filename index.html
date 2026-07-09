@@ -482,10 +482,13 @@ function copyLink(){
     t.remove();
     done();
   };
+  let finished = false;
+  const finish = (fn) => { if (!finished) { finished = true; fn(); } };
   if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(url).then(done).catch(fallback);
+    navigator.clipboard.writeText(url).then(() => finish(done)).catch(() => finish(fallback));
+    setTimeout(() => finish(fallback), 600);
   } else {
-    fallback();
+    finish(fallback);
   }
 }
 
