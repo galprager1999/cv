@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gal Prager | Customer Success</title>
+<style>
+  :root{
+    --ink:#1b2430;
+    --ink-soft:#4a5568;
+    --bg:#fafaf8;
+    --card:#ffffff;
+    --accent:#2f6f4f;
+    --accent-soft:#e8f2ec;
+    --border:#e6e3dd;
+    --max:920px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+  }
+  body[dir="rtl"]{ text-align:right; }
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+
+  header.hero{
+    padding:64px 0 40px;
+    border-bottom:1px solid var(--border);
+  }
+  .hero-inner{display:flex; gap:32px; align-items:center; flex-wrap:wrap;}
+  .avatar{
+    width:112px; height:112px; border-radius:50%;
+    background:linear-gradient(135deg,var(--accent),#1b2430);
+    color:#fff; display:flex; align-items:center; justify-content:center;
+    font-size:38px; font-weight:600; letter-spacing:1px; flex-shrink:0;
+    overflow:hidden;
+  }
+  .avatar img{width:100%; height:100%; object-fit:cover;}
+  .hero-text h1{margin:0 0 6px; font-size:32px; letter-spacing:-0.5px;}
+  .hero-text p.tagline{margin:0 0 16px; color:var(--ink-soft); font-size:17px;}
+  .links{display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
+  .links a{
+    display:inline-flex; align-items:center; gap:6px;
+    padding:8px 14px; border-radius:999px;
+    background:var(--accent-soft); color:var(--accent);
+    text-decoration:none; font-size:14px; font-weight:600;
+    border:1px solid transparent;
+  }
+  .links a:hover{border-color:var(--accent);}
+  #langToggle{
+    display:inline-flex; align-items:center; gap:6px;
+    padding:8px 14px; border-radius:999px;
+    background:transparent; color:var(--ink);
+    font-size:14px; font-weight:600;
+    border:1px solid var(--border); cursor:pointer;
+  }
+  #langToggle:hover{border-color:var(--accent); color:var(--accent);}
+  .share-btn{
+    display:inline-flex; align-items:center; gap:6px;
+    padding:8px 14px; border-radius:999px;
+    background:var(--accent); color:#fff;
+    font-size:14px; font-weight:600;
+    border:1px solid var(--accent); cursor:pointer;
+  }
+  .share-btn:hover{opacity:0.88;}
+
+  section{padding:36px 0; border-bottom:1px solid var(--border);}
+  section:last-of-type{border-bottom:none;}
+  h2{
+    font-size:13px; text-transform:uppercase; letter-spacing:1.5px;
+    color:var(--accent); margin:0 0 20px; font-weight:700;
+  }
+
+  .pitch p{font-size:17px; max-width:70ch; margin:0 0 14px;}
+
+  .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  @media (max-width:640px){ .grid-2{grid-template-columns:1fr;} .hero-inner{flex-direction:column; align-items:flex-start;} }
+
+  .card{
+    background:var(--card); border:1px solid var(--border); border-radius:12px;
+    padding:20px 22px;
+  }
+  .card h3{margin:0 0 8px; font-size:16px;}
+  .card p{margin:0 0 10px; color:var(--ink-soft); font-size:15px;}
+  .card ul{margin:0 0 10px; padding-left:18px; color:var(--ink-soft); font-size:14.5px;}
+  body[dir="rtl"] .card ul{padding-left:0; padding-right:18px;}
+  .card ul:last-child{margin-bottom:0;}
+
+  .timeline-item{display:grid; grid-template-columns:150px 1fr; gap:18px; margin-bottom:24px;}
+  .timeline-item .when{color:var(--ink-soft); font-size:13px; font-weight:600; padding-top:2px;}
+  .timeline-item .what h3{margin:0 0 4px; font-size:17px;}
+  .timeline-item .what .org{color:var(--accent); font-weight:600; font-size:14px; margin-bottom:6px;}
+  .timeline-item ul{margin:6px 0 0; padding-left:18px; color:var(--ink-soft); font-size:14.5px;}
+  body[dir="rtl"] .timeline-item ul{padding-left:0; padding-right:18px;}
+  @media (max-width:640px){ .timeline-item{grid-template-columns:1fr;} }
+
+  .tags{display:flex; flex-wrap:wrap; gap:8px;}
+  .tag{
+    background:#f1f0ec; border:1px solid var(--border); border-radius:8px;
+    padding:6px 12px; font-size:13.5px; color:var(--ink);
+  }
+
+  footer{padding:36px 0 60px; text-align:center; color:var(--ink-soft); font-size:13px;}
+  footer .links{justify-content:center; margin-top:12px;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div class="avatar" id="avatar"><img src="avatar.jpg" alt="Gal Prager"></div>
+    <div class="hero-text">
+      <h1>Gal Prager</h1>
+      <p class="tagline" id="tagline">Customer Success &amp; Entrepreneurship · Interpersonal leadership meets technical fluency</p>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/gal-prager-801062236/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://wa.me/972545242565" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:galprager@gmail.com">Email</a>
+        <button id="shareBtn" class="share-btn" onclick="copyLink()">Share this page</button>
+        <button id="langToggle" onclick="toggleLang()">עברית</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="pitch">
+    <h2 id="h-about">About</h2>
+    <p id="about1">B.A. student in Business Management &amp; Entrepreneurship at Reichman University (expected 2027), moving from QA and sales into Customer Success. I build trust with people quickly, lead under pressure, and translate technical complexity into something a customer can act on without feeling lost.</p>
+    <p id="about2">Before Reichman, I served in a tech-focused Paratroopers special unit, operating UAV platforms alongside Elbit Systems: a role that demanded fast, high-stakes decision-making and the ability to explain complex systems clearly to the people who depended on them.</p>
+  </section>
+
+  <section>
+    <h2 id="h-why">Why Customer Success</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3 id="card1title">Interpersonal leadership</h3>
+        <ul id="card1list">
+          <li>Initiated and led a social venture connecting soldiers from my unit with at-risk youth</li>
+          <li>Planned and ran ongoing mentoring activities that bridged two very different worlds</li>
+          <li>Built trust with teenagers who had every reason not to trust adults or institutions easily</li>
+        </ul>
+        <p id="card1body">That same instinct now drives my volunteer work: mentoring a combat-injured veteran and helping found a university-wide support center for post-traumatic students.</p>
+      </div>
+      <div class="card">
+        <h3 id="card2title">Simplifying technical complexity</h3>
+        <p id="card2body">At DAZN I worked as a QA Engineer inside Agile Scrum, but the role grew beyond testing: I became a connecting point between Product, Development and Design, translating Epics and User Stories into test plans everyone could act on, and surfacing gaps between what was specified, designed and built. That same muscle, holding technical complexity internally and handing people something simple, is exactly what Customer Success needs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 id="h-exp">Experience</h2>
+
+    <div class="timeline-item">
+      <div class="when" id="when1">2023 &ndash; 2025</div>
+      <div class="what">
+        <h3 id="exp1title">Sales Representative</h3>
+        <div class="org" id="exp1org">Via Maris Yacht Club</div>
+        <ul id="exp1list">
+          <li>Managed the full sales cycle, from initial outreach to deal closure</li>
+          <li>Used Oracle CRM for lead tracking and customer data management</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="when" id="when2">2022 &ndash; 2023</div>
+      <div class="what">
+        <h3 id="exp2title">QA Engineer</h3>
+        <div class="org" id="exp2org">DAZN</div>
+        <ul id="exp2list">
+          <li>Partnered daily with developers, PMs and designers on product delivery</li>
+          <li>Executed test plans for full feature releases; analyzed Epics, Features and User Stories in Agile Scrum</li>
+          <li>Managed testing workflows via Jira / XRay</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="when" id="when3">2019 &ndash; 2022</div>
+      <div class="what">
+        <h3 id="exp3title">Special Unit Soldier, UAV Operations</h3>
+        <div class="org" id="exp3org">Paratroopers Brigade, Israel Defense Forces</div>
+        <ul id="exp3list">
+          <li>Specialized in UAV operations in a tech-focused paratroopers unit; requirements analysis and field testing with Elbit Systems</li>
+          <li>Operated multiple UAV platforms; certified Combat Medic; Security clearance Level 2</li>
+          <li>Initiated and led a social venture connecting soldiers in my unit with at-risk youth</li>
+          <li>Reservist and combat-injured veteran, Operation "Swords of Iron"</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="when" id="when4">Ongoing</div>
+      <div class="what">
+        <h3 id="exp4title">Volunteer Mentor, Head-Injury Support</h3>
+        <div class="org" id="exp4org">Brothers for Life (Achim L'Chaim)</div>
+        <ul id="exp4list">
+          <li>Personal mentor to a combat-injured veteran with a head injury</li>
+          <li>After the first year, became coordinator of the mentors' support group</li>
+          <li>Also involved in recruiting and training new mentors at Reichman University</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="when" id="when5">Ongoing</div>
+      <div class="what">
+        <h3 id="exp5title">Co-Founder &amp; Mentor Coordinator</h3>
+        <div class="org" id="exp5org">Post-Trauma Student Support Center, Reichman University</div>
+        <ul id="exp5list">
+          <li>Took an active part in founding a university-wide support center for students coping with post-traumatic stress</li>
+          <li>After the center secured approvals and infrastructure, became lead coordinator of its mentoring program, the center's most significant track</li>
+          <li>Recruits, screens and trains new mentors</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 id="h-edu">Education</h2>
+    <div class="timeline-item">
+      <div class="when" id="when6">2024 &ndash; 2027 (expected)</div>
+      <div class="what">
+        <h3 id="edu1title">B.A., Business Management &amp; Entrepreneurship</h3>
+        <div class="org" id="edu1org">Reichman University</div>
+        <ul id="edu1list">
+          <li>Relevant coursework: Product Design, Statistics &amp; Data Science, Digital Marketing, Innovation in Organizations</li>
+          <li>Product Management Club · AI Club</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="when" id="when7">2016 &ndash; 2018</div>
+      <div class="what">
+        <h3 id="edu2title">QA &amp; Automation Engineering, Full Matriculation Certificate</h3>
+        <div class="org" id="edu2org">Hadasim High School, Even Yehuda</div>
+        <ul id="edu2list">
+          <li>Comprehensive training in manual and automated software testing</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 id="h-skills">Skills</h2>
+    <div class="tags">
+      <span class="tag">QA Automation</span>
+      <span class="tag">Selenium WebDriver</span>
+      <span class="tag">Python</span>
+      <span class="tag">SQL</span>
+      <span class="tag">Excel</span>
+      <span class="tag">Jira</span>
+      <span class="tag">Agile Methodologies</span>
+      <span class="tag">AI Tools &amp; LLMs</span>
+      <span class="tag" id="skillHe">Hebrew (Native)</span>
+      <span class="tag" id="skillEn">English (Fluent)</span>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div id="footerLine">Gal Prager · Reichman University</div>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/gal-prager-801062236/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://wa.me/972545242565" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="mailto:galprager@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const HE = {
+  tagline: "הצלחת לקוחות ויזמות · שילוב של מנהיגות בין-אישית עם שטף טכני",
+  "h-about": "עליי",
+  about1: "סטודנט לתואר ראשון במנהל עסקים ויזמות באוניברסיטת רייכמן (סיום צפוי 2027), בתהליך מעבר מ-QA ומכירות לתחום Customer Success. אני בונה אמון עם אנשים מהר, מוביל תחת לחץ, ומתרגם מורכבות טכנית למשהו שלקוח יכול לפעול לפיו בלי להרגיש אבוד.",
+  about2: "לפני רייכמן שירתתי ביחידה מובחרת טכנולוגית בחטיבת הצנחנים, הפעלתי מערכות רחפנים לצד אלביט מערכות: תפקיד שדרש קבלת החלטות מהירה תחת לחץ, לצד יכולת להסביר מערכות מורכבות בבהירות לאנשים שהסתמכו עליהן.",
+  "h-why": "למה הצלחת לקוחות",
+  card1title: "מנהיגות בין-אישית",
+  card1list: [
+    "יזמתי והובלתי מיזם חברתי שחיבר בין חיילים ביחידה שלי לבני נוער בסיכון",
+    "תכננתי והובלתי פעילות חונכות מתמשכת שגישרה בין שני עולמות שונים מאוד",
+    "בניתי אמון עם בני נוער שהיה להם כל סיבה לא לתת אמון קל במבוגרים או במסגרות"
+  ],
+  card1body: "אותו דחף מוביל גם היום את ההתנדבות שלי: חונכות לפצוע קרב, וסיוע בהקמת מרכז תמיכה אוניברסיטאי לסטודנטים אחרי טראומה.",
+  card2title: "פישוט מורכבות טכנית",
+  card2body: "ב-DAZN עבדתי כמהנדס QA בתוך תהליך Agile Scrum, אבל התפקיד גדל מעבר לבדיקות: הפכתי לנקודת חיבור בין Product, פיתוח ועיצוב, תרגמתי Epics ו-User Stories לתוכניות בדיקה שכולם יכלו לפעול לפיהן, וזיהיתי פערים בין מה שהוגדר, מה שעוצב ומה שפותח בפועל. אותו כישור, להחזיק את המורכבות הטכנית פנימה ולתת לאנשים משהו פשוט, הוא בדיוק מה ש-Customer Success דורש.",
+  "h-exp": "ניסיון תעסוקתי",
+  when1: "2023 &ndash; 2025",
+  exp1title: "נציג מכירות",
+  exp1org: "Via Maris Yacht Club",
+  exp1list: [
+    "ניהלתי את מעגל המכירה המלא, מפנייה ראשונית ועד סגירת עסקה",
+    "עבדתי עם מערכת Oracle CRM למעקב לידים וניהול נתוני לקוחות"
+  ],
+  when2: "2022 &ndash; 2023",
+  exp2title: "מהנדס QA",
+  exp2org: "DAZN",
+  exp2list: [
+    "עבדתי יום יום מול מפתחים, PM ומעצבים על מסירת מוצר",
+    "הרצתי תוכניות בדיקה למחזורי פיצ'רים מלאים; ניתחתי Epics, Features ו-User Stories בתהליך Agile Scrum",
+    "ניהלתי את תהליכי הבדיקה דרך Jira / XRay"
+  ],
+  when3: "2019 &ndash; 2022",
+  exp3title: "לוחם ביחידה מובחרת, הפעלת רחפנים",
+  exp3org: "חטיבת הצנחנים, צה\"ל",
+  exp3list: [
+    "התמחות בהפעלת רחפנים ביחידה טכנולוגית בחטיבת הצנחנים; ניתוח דרישות ובדיקות שטח מול אלביט מערכות",
+    "הפעלתי מספר סוגי רחפנים; חובש קרבי מוסמך; סיווג בטחוני 2",
+    "יזמתי והובלתי מיזם חברתי שחיבר בין חיילים ביחידה לבני נוער בסיכון",
+    "מילואימניק ופצוע קרב, מבצע \"חרבות ברזל\""
+  ],
+  when4: "מתמשך",
+  exp4title: "חונך התנדבותי, תמיכה בפצועי ראש",
+  exp4org: "אחים לחיים (Brothers for Life)",
+  exp4list: [
+    "חונך אישי של פצוע קרב עם פגיעת ראש",
+    "לאחר השנה הראשונה הפכתי לרכז קבוצת התמיכה של החונכים",
+    "מעורב גם בגיוס והכשרה של חונכים חדשים באוניברסיטת רייכמן"
+  ],
+  when5: "מתמשך",
+  exp5title: "שותף מייסד ורכז חונכים",
+  exp5org: "מרכז תמיכה לסטודנטים אחרי טראומה, אוניברסיטת רייכמן",
+  exp5list: [
+    "לקחתי חלק פעיל בהקמת מרכז תמיכה אוניברסיטאי לסטודנטים המתמודדים עם טראומה פוסט-אירועית",
+    "לאחר שהמרכז קיבל אישורים ותשתית, הפכתי לרכז המוביל של תוכנית החונכות, המסלול המשמעותי ביותר במרכז",
+    "מגייס, מסנן ומכשיר חונכים חדשים"
+  ],
+  "h-edu": "השכלה",
+  when6: "2024 &ndash; 2027 (צפוי)",
+  edu1title: "תואר ראשון, מנהל עסקים ויזמות",
+  edu1org: "אוניברסיטת רייכמן",
+  edu1list: [
+    "קורסים רלוונטיים: עיצוב מוצר, סטטיסטיקה ומדעי הנתונים, שיווק דיגיטלי, חדשנות בארגונים",
+    "מועדון ניהול מוצר · מועדון AI"
+  ],
+  when7: "2016 &ndash; 2018",
+  edu2title: "הנדסאות QA ואוטומציה, תעודת בגרות מלאה",
+  edu2org: "תיכון הדסים, אבן יהודה",
+  edu2list: [
+    "הכשרה מקיפה בבדיקות תוכנה ידניות ואוטומטיות"
+  ],
+  skillHe: "עברית (שפת אם)",
+  skillEn: "אנגלית (שוטפת)",
+  "h-skills": "כישורים",
+  footerLine: "גל פרגר · אוניברסיטת רייכמן",
+  langToggleLabel: "English",
+  shareLabel: "שיתוף הדף",
+  shareCopied: "הקישור הועתק ✓"
+};
+
+const EN = {
+  tagline: "Customer Success &amp; Entrepreneurship · Interpersonal leadership meets technical fluency",
+  "h-about": "About",
+  about1: "B.A. student in Business Management &amp; Entrepreneurship at Reichman University (expected 2027), moving from QA and sales into Customer Success. I build trust with people quickly, lead under pressure, and translate technical complexity into something a customer can act on without feeling lost.",
+  about2: "Before Reichman, I served in a tech-focused Paratroopers special unit, operating UAV platforms alongside Elbit Systems: a role that demanded fast, high-stakes decision-making and the ability to explain complex systems clearly to the people who depended on them.",
+  "h-why": "Why Customer Success",
+  card1title: "Interpersonal leadership",
+  card1list: [
+    "Initiated and led a social venture connecting soldiers from my unit with at-risk youth",
+    "Planned and ran ongoing mentoring activities that bridged two very different worlds",
+    "Built trust with teenagers who had every reason not to trust adults or institutions easily"
+  ],
+  card1body: "That same instinct now drives my volunteer work: mentoring a combat-injured veteran and helping found a university-wide support center for post-traumatic students.",
+  card2title: "Simplifying technical complexity",
+  card2body: "At DAZN I worked as a QA Engineer inside Agile Scrum, but the role grew beyond testing: I became a connecting point between Product, Development and Design, translating Epics and User Stories into test plans everyone could act on, and surfacing gaps between what was specified, designed and built. That same muscle, holding technical complexity internally and handing people something simple, is exactly what Customer Success needs.",
+  "h-exp": "Experience",
+  when1: "2023 &ndash; 2025",
+  exp1title: "Sales Representative",
+  exp1org: "Via Maris Yacht Club",
+  exp1list: [
+    "Managed the full sales cycle, from initial outreach to deal closure",
+    "Used Oracle CRM for lead tracking and customer data management"
+  ],
+  when2: "2022 &ndash; 2023",
+  exp2title: "QA Engineer",
+  exp2org: "DAZN",
+  exp2list: [
+    "Partnered daily with developers, PMs and designers on product delivery",
+    "Executed test plans for full feature releases; analyzed Epics, Features and User Stories in Agile Scrum",
+    "Managed testing workflows via Jira / XRay"
+  ],
+  when3: "2019 &ndash; 2022",
+  exp3title: "Special Unit Soldier, UAV Operations",
+  exp3org: "Paratroopers Brigade, Israel Defense Forces",
+  exp3list: [
+    "Specialized in UAV operations in a tech-focused paratroopers unit; requirements analysis and field testing with Elbit Systems",
+    "Operated multiple UAV platforms; certified Combat Medic; Security clearance Level 2",
+    "Initiated and led a social venture connecting soldiers in my unit with at-risk youth",
+    "Reservist and combat-injured veteran, Operation \"Swords of Iron\""
+  ],
+  when4: "Ongoing",
+  exp4title: "Volunteer Mentor, Head-Injury Support",
+  exp4org: "Brothers for Life (Achim L'Chaim)",
+  exp4list: [
+    "Personal mentor to a combat-injured veteran with a head injury",
+    "After the first year, became coordinator of the mentors' support group",
+    "Also involved in recruiting and training new mentors at Reichman University"
+  ],
+  when5: "Ongoing",
+  exp5title: "Co-Founder &amp; Mentor Coordinator",
+  exp5org: "Post-Trauma Student Support Center, Reichman University",
+  exp5list: [
+    "Took an active part in founding a university-wide support center for students coping with post-traumatic stress",
+    "After the center secured approvals and infrastructure, became lead coordinator of its mentoring program, the center's most significant track",
+    "Recruits, screens and trains new mentors"
+  ],
+  "h-edu": "Education",
+  when6: "2024 &ndash; 2027 (expected)",
+  edu1title: "B.A., Business Management &amp; Entrepreneurship",
+  edu1org: "Reichman University",
+  edu1list: [
+    "Relevant coursework: Product Design, Statistics &amp; Data Science, Digital Marketing, Innovation in Organizations",
+    "Product Management Club · AI Club"
+  ],
+  when7: "2016 &ndash; 2018",
+  edu2title: "QA &amp; Automation Engineering, Full Matriculation Certificate",
+  edu2org: "Hadasim High School, Even Yehuda",
+  edu2list: [
+    "Comprehensive training in manual and automated software testing"
+  ],
+  skillHe: "Hebrew (Native)",
+  skillEn: "English (Fluent)",
+  "h-skills": "Skills",
+  footerLine: "Gal Prager · Reichman University",
+  langToggleLabel: "עברית",
+  shareLabel: "Share this page",
+  shareCopied: "Link copied ✓"
+};
+
+function renderList(id, items){
+  const el = document.getElementById(id);
+  el.innerHTML = items.map(t => `<li>${t}</li>`).join('');
+}
+
+function setLang(lang){
+  const dict = lang === 'he' ? HE : EN;
+  document.documentElement.lang = lang;
+  document.body.dir = lang === 'he' ? 'rtl' : 'ltr';
+
+  const simpleIds = ["tagline","h-about","about1","about2","h-why","card1title","card1body",
+    "card2title","card2body","h-exp","when1","exp1title","exp1org","when2","exp2title","exp2org",
+    "when3","exp3title","exp3org","when4","exp4title","exp4org","when5","exp5title","exp5org",
+    "h-edu","when6","edu1title","edu1org","when7","edu2title","edu2org","skillHe","skillEn",
+    "h-skills","footerLine"];
+  simpleIds.forEach(id => { document.getElementById(id).innerHTML = dict[id]; });
+
+  renderList("card1list", dict.card1list);
+  renderList("exp1list", dict.exp1list);
+  renderList("exp2list", dict.exp2list);
+  renderList("exp3list", dict.exp3list);
+  renderList("exp4list", dict.exp4list);
+  renderList("exp5list", dict.exp5list);
+  renderList("edu1list", dict.edu1list);
+  renderList("edu2list", dict.edu2list);
+
+  document.getElementById("langToggle").textContent = dict.langToggleLabel;
+  document.getElementById("shareBtn").textContent = dict.shareLabel;
+}
+
+function copyLink(){
+  const url = window.location.href.split('#')[0];
+  const btn = document.getElementById('shareBtn');
+  const dict = document.documentElement.lang === 'he' ? HE : EN;
+  const done = () => {
+    btn.textContent = dict.shareCopied;
+    setTimeout(() => { btn.textContent = dict.shareLabel; }, 2000);
+  };
+  const fallback = () => {
+    const t = document.createElement('textarea');
+    t.value = url;
+    document.body.appendChild(t);
+    t.select();
+    try { document.execCommand('copy'); } catch(e) {}
+    t.remove();
+    done();
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(done).catch(fallback);
+  } else {
+    fallback();
+  }
+}
+
+function toggleLang(){
+  const current = document.documentElement.lang === 'he' ? 'he' : 'en';
+  setLang(current === 'he' ? 'en' : 'he');
+}
+
+setLang('en');
+</script>
+
+</body>
+</html>
