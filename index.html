@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gal Prager | Customer Success</title>
+<title>Gal Prager | Projects, Operations &amp; Product</title>
+<meta name="description" content="Gal Prager: Business Administration and Entrepreneurship student, mentoring program lead, and former QA engineer. Projects, operations, product thinking, and practical AI tools.">
 <style>
   :root{
     --ink:#1b2430;
@@ -57,6 +58,8 @@
     font-size:14px; font-weight:600;
     border:1px solid var(--border); cursor:pointer;
   }
+  a:focus-visible, button:focus-visible{outline:3px solid var(--accent); outline-offset:4px;}
+  #shareStatus{display:block; margin-top:8px; font-size:14px; color:var(--ink-soft);}
   #langToggle:hover{border-color:var(--accent); color:var(--accent);}
   .share-btn{
     display:inline-flex; align-items:center; gap:6px;
@@ -114,15 +117,16 @@
     <div class="avatar" id="avatar"><img src="avatar.jpg" alt="Gal Prager"></div>
     <div class="hero-text">
       <h1>Gal Prager</h1>
-      <p class="tagline" id="tagline">Customer Success &amp; Customer-Facing Delivery · Interpersonal leadership meets technical fluency</p>
+      <p class="tagline" id="tagline">Projects, Operations &amp; Product · People, processes, and practical AI</p>
       <div class="links">
-        <a href="https://www.linkedin.com/in/gal-prager-801062236/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://www.linkedin.com/in/gal-prager-product-management/" target="_blank" rel="noopener">LinkedIn ↗</a>
         <a href="https://wa.me/972545242565" target="_blank" rel="noopener">WhatsApp</a>
         <a href="mailto:galprager@gmail.com">Email</a>
         <a id="cvBtn" href="Gal-Prager-CV.pdf" download>Download CV</a>
         <button id="shareBtn" class="share-btn" onclick="copyLink()">Share this page</button>
         <button id="langToggle" onclick="toggleLang()">עברית</button>
       </div>
+      <span id="shareStatus" role="status" aria-live="polite"></span>
     </div>
   </div>
 </header>
@@ -131,26 +135,36 @@
 
   <section class="pitch">
     <h2 id="h-about">About</h2>
-    <p id="about1">B.A. student in Business Management &amp; Entrepreneurship at Reichman University (expected 2027), aiming for Customer Success and customer-facing Project / Implementation roles in tech. I build trust with people quickly, lead processes across teams, and translate technical complexity into something a customer can act on without feeling lost.</p>
+    <p id="about1">I study Business Administration &amp; Entrepreneurship at Reichman University (expected 2027). I helped establish the Ofek Center and now lead its core mentoring program, supporting over 100 students with 37 mentors. My experience spans program management, building operational processes, QA, and sales. I enjoy understanding needs, bringing structure to complex tasks, and turning ideas into practical solutions.</p>
   </section>
 
   <section>
-    <h2 id="h-why">Why Customer Success</h2>
+    <h2 id="h-why">How I work</h2>
     <div class="grid-2">
       <div class="card">
-        <h3 id="card1title">Interpersonal leadership</h3>
-        <p id="card1merged">I initiated and led a social venture connecting soldiers from my unit with at-risk youth, and built trust with teenagers who had every reason not to trust adults or institutions easily.</p>
-        <p id="card1body">That same instinct now drives my volunteer work: mentoring a combat-injured veteran and helping found a university-wide support center for post-traumatic students.</p>
+        <h3 id="card1title">People and ownership</h3>
+        <p id="card1merged">I helped establish the Ofek Center at Reichman University, which supports students with PTSD. Today, I hold a management role leading the center’s core mentoring program, supporting over 100 students with 37 mentors.</p>
+        <p id="card1body">Together with the team, I developed and managed a structured selection process, helped build mentor training, and set up tracking and oversight systems. I work with students, university staff, and professionals to turn needs into a functioning service.</p>
       </div>
       <div class="card">
-        <h3 id="card2title">Simplifying technical complexity</h3>
-        <p id="card2body">At DAZN I worked as a QA Engineer inside Agile Scrum, but the role grew beyond testing: I became a connecting point between Product, Development and Design, translating Epics and User Stories into test plans everyone could act on, and surfacing gaps between what was specified, designed and built. That same muscle, holding technical complexity internally and handing people something simple, is exactly what Customer Success needs.</p>
+        <h3 id="card2title">Technical thinking and verification</h3>
+        <p id="card2body">As a QA Engineer at DAZN, I worked with Product, Development, and Design to validate features, analyze requirements, and identify gaps between specifications and implementation. I bring that same approach to AI tools: make the task clear, inspect the result, and check what actually works.</p>
       </div>
     </div>
   </section>
 
   <section>
     <h2 id="h-exp">Experience</h2>
+
+
+    <div class="timeline-item">
+      <div class="when" id="when0">2026 – Present</div>
+      <div class="what">
+        <h3 id="exp0title">Center Establishment &amp; Mentoring Program Lead</h3>
+        <div class="org" id="exp0org">Ofek Center · Reichman University</div>
+        <ul id="exp0list"><li>Helped establish the Ofek Center with the Dean of Student Affairs; now lead its core mentoring program, supporting over 100 students with 37 mentors.</li><li>Co-developed and managed a structured screening and selection process for hundreds of mentor candidates.</li><li>Helped build mentor training and tracking and oversight systems, using evaluation criteria, AI-assisted analysis, and Google Sheets.</li></ul>
+      </div>
+    </div>
 
     <div class="timeline-item">
       <div class="when" id="when1">2023 &ndash; 2025</div>
@@ -169,11 +183,7 @@
       <div class="what">
         <h3 id="exp2title">QA Engineer</h3>
         <div class="org" id="exp2org">DAZN</div>
-        <ul id="exp2list">
-          <li>Partnered daily with developers, PMs and designers on product delivery</li>
-          <li>Executed test plans for full feature releases; analyzed Epics, Features and User Stories in Agile Scrum</li>
-          <li>Managed testing workflows via Jira / XRay</li>
-        </ul>
+        <ul id="exp2list"><li>Worked with Product, Development, and Design to validate features and identify gaps between specifications and implementation.</li><li>Analyzed Epics, Features, and User Stories in Agile Scrum; executed test plans for full feature releases.</li><li>Managed testing workflows in Jira / XRay.</li></ul>
       </div>
     </div>
 
@@ -192,13 +202,10 @@
     </div>
 
     <div class="timeline-item">
-      <div class="when" id="when4"></div>
+      <div class="when" id="when4">Community involvement</div>
       <div class="what">
-        <h3 id="exp4title">Volunteering</h3>
-        <ul id="exp4list">
-          <li>Mentor in a Brothers for Life (Achim L'Chaim) support program: accompanying a combat-injured veteran with a head injury, and now also coordinating his group of mentors</li>
-          <li>Took an active part in founding a support center at Reichman University for students with post-traumatic stress, and became lead coordinator of its mentoring program</li>
-        </ul>
+        <h3 id="exp4title">Volunteer Mentor</h3>
+        <ul id="exp4list"><li>Achim LaChaim (Brothers for Life), 2024–Present: mentor to a combat-injured veteran and coordinator of his support group.</li><li>Earlier volunteering includes the Tzahala at-risk youth program and youth leadership in the Israeli Scouts.</li></ul>
       </div>
     </div>
   </section>
@@ -208,7 +215,7 @@
     <div class="timeline-item">
       <div class="when" id="when6">2024 &ndash; 2027 (expected)</div>
       <div class="what">
-        <h3 id="edu1title">B.A., Business Management &amp; Entrepreneurship</h3>
+        <h3 id="edu1title">B.A., Business Administration &amp; Entrepreneurship</h3>
         <div class="org" id="edu1org">Reichman University</div>
         <ul id="edu1list">
           <li>Relevant coursework: Product Design, Statistics &amp; Data Science, Digital Marketing, Innovation in Organizations, Customer Journey, Marketing Research</li>
@@ -238,9 +245,11 @@
   <section>
     <h2 id="h-skills">Skills</h2>
     <div class="tags">
-      <span class="tag">QA Automation</span>
-      <span class="tag">Selenium WebDriver</span>
-      <span class="tag">Python</span>
+      <span class="tag">Project Management</span>
+      <span class="tag">Stakeholder Management</span>
+      <span class="tag">Process Improvement</span>
+      <span class="tag">Requirements Analysis</span>
+      <span class="tag">QA</span>
       <span class="tag">SQL</span>
       <span class="tag">Excel</span>
       <span class="tag">Jira</span>
@@ -257,7 +266,7 @@
   <div class="wrap">
     <div id="footerLine">Gal Prager · Reichman University</div>
     <div class="links">
-      <a href="https://www.linkedin.com/in/gal-prager-801062236/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://www.linkedin.com/in/gal-prager-product-management/" target="_blank" rel="noopener">LinkedIn ↗</a>
       <a href="https://wa.me/972545242565" target="_blank" rel="noopener">WhatsApp</a>
       <a href="mailto:galprager@gmail.com">Email</a>
     </div>
@@ -265,16 +274,21 @@
 </footer>
 
 <script>
-const HE = {
-  tagline: "Customer Success ותפקידים מול לקוחות · מנהיגות בין-אישית לצד הבנה טכנית",
+const HE = {  "shareFailed": "לא ניתן להעתיק — אפשר להעתיק את הכתובת מהדפדפן",
+  "exp0list": ["שותף בהקמת מרכז אופק עם דקנית הסטודנטים; כיום מוביל את תחום החונכות שבליבתו, עם למעלה מ־100 סטודנטים שמקבלים ליווי ו־37 מלווים.", "שותף ליצירה ולניהול של תהליך מיון מובנה למאות מועמדים לחונכות.", "בניית הכשרה למלווים ומערכות מעקב ובקרה, בשילוב קריטריונים להערכה, ניתוח בסיוע AI ו־Google Sheets."],
+  "exp0org": "מרכז אופק · אוניברסיטת רייכמן",
+  "exp0title": "שותף בהקמת המרכז ומוביל תחום החונכות",
+  "when0": "2026 – היום",
+
+  "tagline": "פרויקטים, תפעול ומוצר · אנשים, תהליכים ושימוש מעשי ב־AI",
   "h-about": "עליי",
-  about1: "סטודנט לתואר ראשון במנהל עסקים ויזמות באוניברסיטת רייכמן (סיום צפוי 2027), מכוון לתפקידי Customer Success או Project / Implementation מול לקוחות בעולם הטכנולוגי. אני בונה אמון עם אנשים מהר, מוביל תהליכים מול ממשקים שונים, ומתרגם מורכבות טכנית למשהו שלקוח יכול לפעול לפיו בלי להרגיש אבוד.",
-  "h-why": "למה הצלחת לקוחות",
-  card1title: "מנהיגות בין-אישית",
-  card1merged: "יזמתי והובלתי מיזם חברתי שחיבר בין חיילים ביחידה שלי לבני נוער בסיכון, ובניתי אמון עם בני נוער שהיה להם כל סיבה לא לתת אמון קל במבוגרים או במסגרות.",
-  card1body: "אותו דחף מוביל גם היום את ההתנדבות שלי: חונכות לפצוע קרב, וסיוע בהקמת מרכז תמיכה אוניברסיטאי לסטודנטים אחרי טראומה.",
-  card2title: "פישוט מורכבות טכנית",
-  card2body: "ב-DAZN עבדתי כמהנדס QA בתוך תהליך Agile Scrum, אבל התפקיד גדל מעבר לבדיקות: הפכתי לנקודת חיבור בין Product, פיתוח ועיצוב, תרגמתי Epics ו-User Stories לתוכניות בדיקה שכולם יכלו לפעול לפיהן, וזיהיתי פערים בין מה שהוגדר, מה שעוצב ומה שפותח בפועל. אותו כישור, להחזיק את המורכבות הטכנית פנימה ולתת לאנשים משהו פשוט, הוא בדיוק מה ש-Customer Success דורש.",
+  "about1": "אני סטודנט למנהל עסקים ויזמות באוניברסיטת רייכמן (סיום צפוי ב־2027). הייתי שותף בהקמת מרכז אופק, וכיום אני מוביל את תחום החונכות שבליבת המרכז, עם למעלה מ־100 סטודנטים שמקבלים ליווי ו־37 מלווים. הניסיון שלי משלב ניהול תוכנית, בניית תהליכים ותשתיות תפעוליות, QA ומכירות. אני אוהב להבין צרכים, להכניס סדר במשימות מורכבות ולהפוך רעיונות לפתרונות מעשיים.",
+  "h-why": "איך אני עובד",
+  "card1title": "אנשים ואחריות",
+  "card1merged": "הייתי שותף בהקמת מרכז אופק באוניברסיטת רייכמן, שתומך בסטודנטים עם פוסט־טראומה. כיום אני בתפקיד ניהולי ואחראי על תחום החונכות, שמהווה את ליבת המרכז: למעלה מ־100 סטודנטים מקבלים ליווי, לצד 37 מלווים.",
+  "card1body": "יחד עם הצוות יצרנו וניהלנו תהליך מיון מובנה, בנינו הכשרה למלווים והקמנו מערכות מעקב ובקרה. אני עובד עם סטודנטים, צוות האוניברסיטה ואנשי מקצוע כדי להפוך צרכים למענה שפועל בשטח.",
+  "card2title": "חשיבה טכנית ובדיקת תוצאות",
+  "card2body": "כמהנדס QA ב־DAZN עבדתי עם צוותי מוצר, פיתוח ועיצוב כדי לבדוק פיצ׳רים, לנתח דרישות ולזהות פערים בין האפיון למימוש. זו גם הגישה שלי לכלי AI: להגדיר משימה ברורה, לבחון את התוצאה ולבדוק מה עובד בפועל.",
   "h-exp": "ניסיון תעסוקתי",
   when1: "2023 &ndash; 2025",
   exp1title: "נציג מכירות",
@@ -286,11 +300,7 @@ const HE = {
   when2: "2022 &ndash; 2023",
   exp2title: "מהנדס QA",
   exp2org: "DAZN",
-  exp2list: [
-    "עבדתי יום יום מול מפתחים, PM ומעצבים על מסירת מוצר",
-    "הרצתי תוכניות בדיקה למחזורי פיצ'רים מלאים; ניתחתי Epics, Features ו-User Stories בתהליך Agile Scrum",
-    "ניהלתי את תהליכי הבדיקה דרך Jira / XRay"
-  ],
+  "exp2list": ["עבודה עם צוותי מוצר, פיתוח ועיצוב לבדיקת פיצ׳רים וזיהוי פערים בין האפיון למימוש.", "ניתוח Epics, Features ו־User Stories ב־Agile Scrum והרצת תוכניות בדיקה לגרסאות מלאות.", "ניהול תהליכי הבדיקה ב־Jira / XRay."],
   when3: "2019 &ndash; 2022",
   exp3title: "לוחם בצוות מיוחד, הפעלת רחפנים",
   exp3org: "סיירת צנחנים, צה\"ל",
@@ -300,15 +310,12 @@ const HE = {
     "יזמתי והובלתי מיזם חברתי שחיבר בין חיילים ביחידה לבני נוער בסיכון",
     "מילואימניק ופצוע קרב, מבצע \"חרבות ברזל\""
   ],
-  when4: "",
-  exp4title: "התנדבות",
-  exp4list: [
-    "חונך בתוכנית ליווי של ארגון אחים לחיים, מלווה פצוע קרב עם פגיעת ראש, וכיום גם מרכז את קבוצת המלווים של אותו פצוע",
-    "שותף בהקמת מרכז תמיכה באוניברסיטת רייכמן לסטודנטים עם פוסט טראומה, וכיום הרכז המוביל של תוכנית החונכות במרכז"
-  ],
+  "when4": "מעורבות חברתית",
+  "exp4title": "חונכות והתנדבות",
+  "exp4list": ["אחים לחיים, 2024–היום: חונכות לפצוע קרב וריכוז קבוצת המלווים שלו.", "התנדבות קודמת בתוכנית צהלה לנוער בסיכון והדרכת נוער בצופים."],
   "h-edu": "השכלה",
   when6: "2024 &ndash; 2027 (צפוי)",
-  edu1title: "תואר ראשון, מנהל עסקים ויזמות",
+  "edu1title": "תואר ראשון, מנהל עסקים ויזמות",
   edu1org: "אוניברסיטת רייכמן",
   edu1list: [
     "קורסים רלוונטיים: עיצוב מוצר, סטטיסטיקה ומדעי הנתונים, שיווק דיגיטלי, חדשנות בארגונים, Customer Journey, מחקר שיווקי",
@@ -333,16 +340,21 @@ const HE = {
   shareCopied: "הקישור הועתק ✓"
 };
 
-const EN = {
-  tagline: "Customer Success &amp; Customer-Facing Delivery · Interpersonal leadership meets technical fluency",
+const EN = {  "shareFailed": "Could not copy — copy the address from your browser",
+  "exp0list": ["Helped establish the Ofek Center with the Dean of Student Affairs; now lead its core mentoring program, supporting over 100 students with 37 mentors.", "Co-developed and managed a structured screening and selection process for hundreds of mentor candidates.", "Helped build mentor training and tracking and oversight systems, using evaluation criteria, AI-assisted analysis, and Google Sheets."],
+  "exp0org": "Ofek Center · Reichman University",
+  "exp0title": "Center Establishment &amp; Mentoring Program Lead",
+  "when0": "2026 – Present",
+
+  "tagline": "Projects, Operations &amp; Product · People, processes, and practical AI",
   "h-about": "About",
-  about1: "B.A. student in Business Management &amp; Entrepreneurship at Reichman University (expected 2027), aiming for Customer Success and customer-facing Project / Implementation roles in tech. I build trust with people quickly, lead processes across teams, and translate technical complexity into something a customer can act on without feeling lost.",
-  "h-why": "Why Customer Success",
-  card1title: "Interpersonal leadership",
-  card1merged: "I initiated and led a social venture connecting soldiers from my unit with at-risk youth, and built trust with teenagers who had every reason not to trust adults or institutions easily.",
-  card1body: "That same instinct now drives my volunteer work: mentoring a combat-injured veteran and helping found a university-wide support center for post-traumatic students.",
-  card2title: "Simplifying technical complexity",
-  card2body: "At DAZN I worked as a QA Engineer inside Agile Scrum, but the role grew beyond testing: I became a connecting point between Product, Development and Design, translating Epics and User Stories into test plans everyone could act on, and surfacing gaps between what was specified, designed and built. That same muscle, holding technical complexity internally and handing people something simple, is exactly what Customer Success needs.",
+  "about1": "I study Business Administration &amp; Entrepreneurship at Reichman University (expected 2027). I helped establish the Ofek Center and now lead its core mentoring program, supporting over 100 students with 37 mentors. My experience spans program management, building operational processes, QA, and sales. I enjoy understanding needs, bringing structure to complex tasks, and turning ideas into practical solutions.",
+  "h-why": "How I work",
+  "card1title": "People and ownership",
+  "card1merged": "I helped establish the Ofek Center at Reichman University, which supports students with PTSD. Today, I hold a management role leading the center’s core mentoring program, supporting over 100 students with 37 mentors.",
+  "card1body": "Together with the team, I developed and managed a structured selection process, helped build mentor training, and set up tracking and oversight systems. I work with students, university staff, and professionals to turn needs into a functioning service.",
+  "card2title": "Technical thinking and verification",
+  "card2body": "As a QA Engineer at DAZN, I worked with Product, Development, and Design to validate features, analyze requirements, and identify gaps between specifications and implementation. I bring that same approach to AI tools: make the task clear, inspect the result, and check what actually works.",
   "h-exp": "Experience",
   when1: "2023 &ndash; 2025",
   exp1title: "Sales Representative",
@@ -354,11 +366,7 @@ const EN = {
   when2: "2022 &ndash; 2023",
   exp2title: "QA Engineer",
   exp2org: "DAZN",
-  exp2list: [
-    "Partnered daily with developers, PMs and designers on product delivery",
-    "Executed test plans for full feature releases; analyzed Epics, Features and User Stories in Agile Scrum",
-    "Managed testing workflows via Jira / XRay"
-  ],
+  "exp2list": ["Worked with Product, Development, and Design to validate features and identify gaps between specifications and implementation.", "Analyzed Epics, Features, and User Stories in Agile Scrum; executed test plans for full feature releases.", "Managed testing workflows in Jira / XRay."],
   when3: "2019 &ndash; 2022",
   exp3title: "Special Team Soldier, UAV Operations",
   exp3org: "Sayeret Tzanhanim (Paratroopers Reconnaissance Unit), IDF",
@@ -368,15 +376,12 @@ const EN = {
     "Initiated and led a social venture connecting soldiers in my unit with at-risk youth",
     "Reservist and combat-injured veteran, Operation \"Swords of Iron\""
   ],
-  when4: "",
-  exp4title: "Volunteering",
-  exp4list: [
-    "Mentor in a Brothers for Life (Achim L'Chaim) support program: accompanying a combat-injured veteran with a head injury, and now also coordinating his group of mentors",
-    "Took an active part in founding a support center at Reichman University for students with post-traumatic stress, and became lead coordinator of its mentoring program"
-  ],
+  "when4": "Community involvement",
+  "exp4title": "Volunteer Mentor",
+  "exp4list": ["Achim LaChaim (Brothers for Life), 2024–Present: mentor to a combat-injured veteran and coordinator of his support group.", "Earlier volunteering includes the Tzahala at-risk youth program and youth leadership in the Israeli Scouts."],
   "h-edu": "Education",
   when6: "2024 &ndash; 2027 (expected)",
-  edu1title: "B.A., Business Management &amp; Entrepreneurship",
+  "edu1title": "B.A., Business Administration &amp; Entrepreneurship",
   edu1org: "Reichman University",
   edu1list: [
     "Relevant coursework: Product Design, Statistics &amp; Data Science, Digital Marketing, Innovation in Organizations, Customer Journey, Marketing Research",
@@ -408,6 +413,8 @@ function renderList(id, items){
 
 function setLang(lang){
   const dict = lang === 'he' ? HE : EN;
+  document.title = lang === 'he' ? 'גל פרגר | פרויקטים, תפעול ומוצר' : 'Gal Prager | Projects, Operations & Product';
+  document.getElementById("shareStatus").textContent = "";
   document.documentElement.lang = lang;
   document.body.dir = lang === 'he' ? 'rtl' : 'ltr';
 
@@ -415,9 +422,10 @@ function setLang(lang){
     "card2title","card2body","h-exp","when1","exp1title","exp1org","when2","exp2title","exp2org",
     "when3","exp3title","exp3org","when4","exp4title",
     "h-edu","when6","edu1title","edu1org","when7","edu2title","edu2org","when8","edu3title","edu3org",
-    "skillHe","skillEn","h-skills","footerLine"];
+    "skillHe","skillEn","h-skills","footerLine", "when0", "exp0title", "exp0org"];
   simpleIds.forEach(id => { document.getElementById(id).innerHTML = dict[id]; });
 
+  renderList("exp0list", dict.exp0list);
   renderList("exp1list", dict.exp1list);
   renderList("exp2list", dict.exp2list);
   renderList("exp3list", dict.exp3list);
@@ -430,30 +438,25 @@ function setLang(lang){
   document.getElementById("cvBtn").textContent = dict.cvLabel;
 }
 
-function copyLink(){
-  const url = window.location.href.split('#')[0];
-  const btn = document.getElementById('shareBtn');
+async function copyLink(){
+  const url = 'https://galprager1999.github.io/cv/';
   const dict = document.documentElement.lang === 'he' ? HE : EN;
-  const done = () => {
-    btn.textContent = dict.shareCopied;
-    setTimeout(() => { btn.textContent = dict.shareLabel; }, 2000);
-  };
-  const fallback = () => {
-    const t = document.createElement('textarea');
-    t.value = url;
-    document.body.appendChild(t);
-    t.select();
-    try { document.execCommand('copy'); } catch(e) {}
-    t.remove();
-    done();
-  };
-  let finished = false;
-  const finish = (fn) => { if (!finished) { finished = true; fn(); } };
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(url).then(() => finish(done)).catch(() => finish(fallback));
-    setTimeout(() => finish(fallback), 600);
-  } else {
-    finish(fallback);
+  const status = document.getElementById('shareStatus');
+  try {
+    if (!navigator.clipboard) throw new Error('Clipboard unavailable');
+    await navigator.clipboard.writeText(url);
+    status.textContent = dict.shareCopied;
+  } catch (error) {
+    const field = document.createElement('textarea');
+    field.value = url;
+    field.style.position = 'fixed';
+    field.style.opacity = '0';
+    document.body.appendChild(field);
+    field.select();
+    let copied = false;
+    try { copied = document.execCommand('copy'); } catch (_) {}
+    field.remove();
+    status.textContent = copied ? dict.shareCopied : dict.shareFailed;
   }
 }
 
@@ -467,3 +470,4 @@ setLang('en');
 
 </body>
 </html>
+
